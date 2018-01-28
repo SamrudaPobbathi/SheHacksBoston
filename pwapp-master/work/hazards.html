@@ -1,0 +1,134 @@
+<!--
+ Copyright 2016 Google Inc.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather PWA</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+  <script src="scripts/app.js"></script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="scripts/app.js"></script>
+    
+
+  </script>
+
+
+
+  <!-- TODO add manifest here -->
+  
+</head>
+<body>
+
+ <header class="header" id="header">
+    <h1 class="header__title"><a href="index.html"> FirstResponder Connect</a></h1>
+   <!-- <button id="butRefresh" class="headerButton" aria-label="Refresh"></button> -->
+    <button class="headerButton1" > <a id="info-btn" class="headerButtonLink"  href="form.html">Enter your info</a> </button>
+  </header>
+
+  <main class="main">
+  <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="ResourceTracker.html">Resource Tracker</a>
+      <a href="hazards.html">Hazards</a>
+      <a href="shelter.html">Shelter Homes</a>
+    </div>
+
+    <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
+   
+    
+    <div class="mapwrapper" id="mapwrapper">
+      <div id="map" >
+
+        
+      </div>
+      <form method="post">
+            <input type="text" id="lat" readonly="yes"><br>
+            <input type="text" id="lng" readonly="yes">
+        </form>
+
+
+    </div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: new google.maps.LatLng(42.360082,-71.058880),
+          mapTypeId: 'roadmap'
+        });
+
+        var iconBase = 'images/';
+        var icons = {
+          info: {
+            icon: iconBase + 'Untitled-39-128.png'
+          }
+        };
+
+        var features = [
+          {
+            position: new google.maps.LatLng(43.48481212891604,-71.1474609375),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-43.18114705939967,72.59765625),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(42.374778361114195,-71.89453125),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(41.85319643776675,-72.509765625),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(42.407234661551875,-73.1689453125),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(43.659924074789,-74.06982421875),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(44.66865287227321,-72.158203125),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(44.88701247981298,-70.1806640625),
+            type: 'info'
+          }];
+
+        // Create markers.
+        features.forEach(function(feature) {
+          var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map
+          });
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFQvpdSgUI4PWS-6S4MOwMqm5scRqYz5k&callback=initMap">
+    </script>
+    </div>
+   </main>
+
+<!--   Uncomment the line below when ready to test with fake data -->
+   
+
+
+</body>
+</html>

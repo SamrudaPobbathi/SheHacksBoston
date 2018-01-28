@@ -1,0 +1,83 @@
+<!--
+ Copyright 2016 Google Inc.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather PWA</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+  <script src="scripts/app.js"></script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="scripts/app.js"></script>
+    
+
+  </script>
+
+
+
+  <!-- TODO add manifest here -->
+  
+</head>
+<body>
+
+ <header class="header" id="header">
+    <h1 class="header__title">FirstResponder Connect</h1>
+   <!-- <button id="butRefresh" class="headerButton" aria-label="Refresh"></button> -->
+    <button class="headerButton1" > <a id="info-btn" class="headerButtonLink"  href="form.html">Enter your info</a> </button>
+  </header>
+
+  <main class="main">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="ResourceTracker.html">Resource Tracker</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
+   
+    
+    <div class="mapwrapper" id="mapwrapper">
+      <div id="map" >
+
+        
+      </div>
+      <form method="post">
+            <input type="text" id="lat" readonly="yes"><br>
+            <input type="text" id="lng" readonly="yes">
+        </form>
+
+
+    </div>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFQvpdSgUI4PWS-6S4MOwMqm5scRqYz5k&callback=initMap">
+    </script>
+    </div>
+   </main>
+
+<!--   Uncomment the line below when ready to test with fake data -->
+   
+
+
+</body>
+</html>
